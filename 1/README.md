@@ -120,7 +120,7 @@ if(M_Axis_tvalid==1 and S_AXIS_tready==1) then
 ## Simulations
 Simulations have been used that separately depict the functionality of the `myip_module`. Simulation are divided into two operating scenarios.
 
-### Read/Write without delay (scenario#1)
+### Read/Write without delay ([scenario#1](https://github.com/z1skgr/reconfigurable-Computing/issues/6#issue-1182011908))
 FIFO in reset state
 __Write__
 * Assign data for registration by the Slave interface (0, FIFO-Length-1)
