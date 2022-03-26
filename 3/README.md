@@ -1,13 +1,23 @@
 # 64-FIFO and Data flow-system in a integrated design
-> Implement FIFO with procedures of writing/reading elements between master-slave interfaces of AXI4-protocol
+>  Union 64 FIFO and Data stream system
 
 ## Table of Contents
 * [General Info](#general-info)
-* [rSoC structure](#rsoc-structure)
+* [System structure](#rsoc-structure)
 * [Project Environment](#project-environment)
 * [Edit Logic](#edit-logic)
 * [Modifications](#modifications)
 * [Simulations](#simulations)
+* [IP Export](#ip-export)
+
+## IP Export
+1. In Vivado HLS, press Synthesis->Export IP.
+2. Configuration-> Version. Write a version of your IP-> Ok
+3. Project of HLS has to be in path `\project_2_17.4\ip_repo\my_ip_hls"`
+4. In Vivado, press + to add IP.
+5. Find your version of `"My_ip_hls`"
+6. Assignment of the initial address of the my_ip_hls.
+7. For updates on `my_ip_hls`, press __upgrade selected__ and __refresh ip catalog__.
 
 ## General Info
 The final construction requires
@@ -15,9 +25,8 @@ The final construction requires
 * Implementation of procedures for recording and reading fifo elements between masters
 slave Interfaces of ACHI4-protocol
 
-## rSoC structure
+## System structure
 
-![rsoc](https://user-images.githubusercontent.com/22920222/160246516-5ddf64eb-8a30-40c8-bcf0-f8081e58ba70.png)
 
 <br><br>
 
