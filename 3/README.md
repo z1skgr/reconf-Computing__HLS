@@ -4,8 +4,6 @@
 ## Table of Contents
 * [General Info](#general-info)
 * [System structure](#rsoc-structure)
-* [Project Environment](#project-environment)
-* [Edit Logic](#edit-logic)
 * [Modifications](#modifications)
 * [Simulations](#simulations)
 * [IP Export](#ip-export)
