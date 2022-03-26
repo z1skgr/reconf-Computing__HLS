@@ -20,6 +20,13 @@ Necessary steps to obtain the correct, explanatory study in the datapath and the
 ## System structure
 
 
+
+Tthe diagram block design is followed by component modifications, links, and the introduction of the new implementation:
+
+![bb](https://user-images.githubusercontent.com/22920222/160258831-65c68df3-a0e4-4770-850a-d94258c5bb0b.png)
+
+
+
 <br><br>
 
 
