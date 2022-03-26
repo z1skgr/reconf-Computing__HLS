@@ -24,16 +24,15 @@ slave Interfaces of ACHI4-protocol
 
 Modules:
 * __Processing System (PS)__: The processor that runs the application and can communicate 
-with material in the PL via an I/O port.
-* __Interconnect (I/C)__: Interconnection that allows communication between modules
+with PL via an I/O port.
+* __Interconnect (I/C)__: Interconnection that allows communication between modules.
 * __Memory ctlr__: The memory controller that allows access to data from PS and 
 any module in PL.
 * __Memory__: The memory that data is stored either for processing or as results 
-after processing
+after processing.
 * __My IPs__: All the logic we've put in and can access memory through DMAe.
 Probably logic not only communicates with DMAe, but also has a connection to PS, 
-in order for the latter to be able to pass parameters or see the state of the 
-Logic
+in order to be able to pass parameters or see the state of the Logic.
 * __DMA engine (DMAe)__: The module that allows access to memory without being affected 
 the operation of PS. More specifically, DMAe has the following signals:
    * *Configuration*: Interface to enable the PS to program or view the status 
@@ -66,9 +65,9 @@ AXI4 memory controller, and DMAe.
 4. The 2nd memory controller that allows access to memory from the DMAe
 5. The DMAe used to transfer data between logic <-> DMAe.
 6. The AXI4 interconnect that allows DMAe to access memory via memory
-controller
+controller.
 7. The memory in which data is stored for processing and results.
-8. Our logic
+8. Our logic.
 
 In our logic, we have set the variables in the table below:
 
@@ -91,7 +90,7 @@ In our logic, we have set the variables in the table below:
 5. When you make changes to the code, then save. Then select Project Manager -> Package IP. A new tab appears on the right "Package IP - myip" along with Packaging steps.
 6. In the identification, change the version, so that you can be sure that after the simulation
 you use the updated IP.  
-7. In the Review and Package step click Re-Package IP. In the original project that is for the whole
+7. In the Review and Package step, click Re-Package IP. In the original project that is for the whole
 system, an IP catalog message will be displayed is out-of-date:
 8. Press Refresh IP Catalog and then at the bottom  Upgrade selected. In the window 
 "Generate Output Products" press Skip.
@@ -102,14 +101,16 @@ system, an IP catalog message will be displayed is out-of-date:
 * FIFO writing
 ```
 if(S_Axis_tvalid==1 and S_AXIS_tready==1) then
-   FIFO[i] <= S_AXIS_tdata; where i 1<sup>st</sup> empty space in FIFO
+   FIFO[i] <= S_AXIS_tdata; 
 ```
+where i 1<sup>st</sup> empty space in FIFO
 
 * FIFO reading
 ```
 if(M_Axis_tvalid==1 and S_AXIS_tready==1) then
-   M_Axis_tdata <= FIFO[0]; where i 1<sup>st</sup> empty space in FIFO
+   M_Axis_tdata <= FIFO[0]; 
 ```
+
 
 ## Modifications
 1. Change of counter/pointers and positions reserved for the construction of FIFO
