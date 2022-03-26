@@ -5,7 +5,7 @@
 * [General Info](#general-info)
 * [rSoC structure](#rsoc-structure)
 * [Edit Logic](#edit-logic)
-* [Project Environment(#project-environment)
+* [Project Environment](#project-environment)
 
 ## General Info
 
@@ -27,7 +27,9 @@ Interconnection of PS with DMAe using AXI4 and AXI4 interface
 
 ![axi4_1](https://user-images.githubusercontent.com/22920222/160241684-42f82bc7-4aba-4052-bb47-1b73ac955f36.png)
 
+<br>
 
+Here, it's the block design at Vivado. Based on the numbers shown in the figure:
 1. The PS running the application, and will configure the DMAe
 2. The AXI4 interconnect that allows communication between the PS and our logic, one
 AXI4 memory controller, and DMAe. 
