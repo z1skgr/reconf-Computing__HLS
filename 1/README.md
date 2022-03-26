@@ -25,5 +25,23 @@ system, an IP catalog message will be displayed is out-of-date:
 ## Project Environment
 Interconnection of PS with DMAe using AXI4 and AXI4 interface
 
+![axi4_1](https://user-images.githubusercontent.com/22920222/160241684-42f82bc7-4aba-4052-bb47-1b73ac955f36.png)
+
+
+1. The PS running the application, and will configure the DMAe
+2. The AXI4 interconnect that allows communication between the PS and our logic, one
+AXI4 memory controller, and DMAe. 
+3. The 1st memory controller that allows access to memory from the PS
+4. The 2nd memory controller that allows access to memory from the DMAe
+5. The DMAe used to transfer data between logic <-> DMAe.
+6. The AXI4 interconnect that allows DMAe to access memory via memory
+controller
+7. The memory in which data is stored for processing and results.
+8. Our logic
+
+
+![axi4_2](https://user-images.githubusercontent.com/22920222/160241694-dd46b84e-b56e-4ce6-86e9-58b6a39ddd64.png)
+
+
 
 
