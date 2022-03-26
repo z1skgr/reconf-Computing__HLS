@@ -99,14 +99,14 @@ system, an IP catalog message will be displayed is out-of-date:
  
 <br><br>
 * FIFO writing
-```
+```C
 if(S_Axis_tvalid==1 and S_AXIS_tready==1) then
    FIFO[i] <= S_AXIS_tdata; 
 ```
 where i 1<sup>st</sup> empty space in FIFO
 
 * FIFO reading
-```
+```C
 if(M_Axis_tvalid==1 and S_AXIS_tready==1) then
    M_Axis_tdata <= FIFO[0]; 
 ```
