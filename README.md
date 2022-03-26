@@ -14,7 +14,7 @@ Install [Vivado 2017.4 HL design edition (full version)](https://www.xilinx.com/
    * SoC -> Zynq 7000
 
 ## Acknowledgement
-
+This project was created for the requirements of the lesson Reconfigurable Programming/Computing.
 
 
 
