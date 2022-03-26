@@ -1,9 +1,9 @@
-# 64-FIFO Implementantion 32 bits words
-> Implement FIFO with procedures of writing/reading elements between master-slave interfaces of AXI4-protocol
+# Data Flow system implementation
+> Ιmplementation of a system that "filters" a stream  data in relation to predefined rules
 
 ## Table of Contents
 * [General Info](#general-info)
-* [rSoC structure](#rsoc-structure)
+* [Flow data system structure](#flow-data-system-structure)
 * [Project Environment](#project-environment)
 * [Edit Logic](#edit-logic)
 * [Modifications](#modifications)
@@ -11,38 +11,12 @@
 
 ## General Info
 The final construction requires
-* Construction of 64-fifo (32 bits size word)
-* Implementation of procedures for recording and reading fifo elements between masters
-slave Interfaces of ACHI4-protocol
+* Construction of registers in which the values of the rules are stored.
+* Construction of registers in which the number of times the rules have been activated are stored.
+* Update the rest of the system details as well as the required communication between them.
 
-## rSoC structure
+## Flow data system structure
 
-![rsoc](https://user-images.githubusercontent.com/22920222/160246516-5ddf64eb-8a30-40c8-bcf0-f8081e58ba70.png)
-
-<br><br>
-
-
-Modules:
-* __Processing System (PS)__: The processor that runs the application and can communicate 
-with PL via an I/O port.
-* __Interconnect (I/C)__: Interconnection that allows communication between modules.
-* __Memory ctlr__: The memory controller that allows access to data from PS and 
-any module in PL.
-* __Memory__: The memory that data is stored either for processing or as results 
-after processing.
-* __My IPs__: All the logic we've put in and can access memory through DMAe.
-Probably logic not only communicates with DMAe, but also has a connection to PS, 
-in order to be able to pass parameters or see the state of the Logic.
-* __DMA engine (DMAe)__: The module that allows access to memory without being affected 
-the operation of PS. More specifically, DMAe has the following signals:
-   * *Configuration*: Interface to enable the PS to program or view the status 
-of DMAe
-   * *Data_mem*: Memory-mapped interface to exchange the DMAe data with the 
-memory.
-   * *Data_M2IP_S*: Streaming interface for transferring data from DMAe to 
-our logic.
-   * *Data_IP2M_S*: Streaming interface to transfer data from our logic to 
-the DMAe.
 
 
 ## Project Environment
