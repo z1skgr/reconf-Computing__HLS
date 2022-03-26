@@ -7,6 +7,7 @@
 * [Project Environment](#project-environment)
 * [Edit Logic](#edit-logic)
 * [Modifications](#modifications)
+* [Simulations](#simulations)
 
 ## General Info
 The final construction requires
@@ -116,5 +117,14 @@ if(M_Axis_tvalid==1 and S_AXIS_tready==1) then
 3. Master-slave communication for [reading](https://github.com/z1skgr/reconfigurable-Computing/issues/4#issue-1181866707) with address signal.
 4. [Insertion register](https://github.com/z1skgr/reconfigurable-Computing/issues/5#issue-1181867633) in the slave component.
 
+## Simulations
+Simulations have been used that separately depict the functionality of the `myip_module`. Simulation are divided into two operating scenarios.
 
+### Read/Write without delay
+FIFO in reset state
+__Write__
+* Assign values for registration by the Slave interface (0, FIFO-Length-1)
+    * s_tready = 1
+    * s_tvalid = 1
 
+### Read/Write with intervals
