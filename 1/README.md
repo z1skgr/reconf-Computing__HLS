@@ -112,7 +112,7 @@ if(M_Axis_tvalid==1 and S_AXIS_tready==1) then
 
 ## Modifications
 1. Change of counter/pointers and positions reserved for the construction of FIFO
-2. Modification of [FSM](https://github.com/z1skgr/reconfigurable-Computing/issues/2#issue-1181781550) machine in slave module for registration.
+2. Modification of [FSM](https://github.com/z1skgr/reconfigurable-Computing/issues/3#issue-1181864959) machine in slave module for registration.
 3. Master-slave communication for reading with address signal.
 4. Insertion register in the slave component.
 
