@@ -50,6 +50,11 @@ functions needed to process the data.
 3. Update the myip module's directives for the placement of the desired number of registers.
 4. Print the rules counters in each data check.
 
+<br><br>
+
+![Untitled Diagram](https://user-images.githubusercontent.com/22920222/160257816-49e140fd-a2bc-4297-8c06-d5a944153a96.png)
+
+
 
 
 
