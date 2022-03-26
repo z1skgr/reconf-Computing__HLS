@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="core.cpp" path="C:\Users\zisk\Desktop\2\my_ip_hls\core.cpp"/>
+    <originFiles name="ip2ps_fifo.cpp" path="C:\Users\zisk\Desktop\2\my_ip_hls\ip2ps_fifo.cpp"/>
+    <originFiles name="my_ip_hls.cpp" path="C:\Users\zisk\Desktop\2\my_ip_hls\my_ip_hls.cpp"/>
+    <originFiles name="my_ip_hls.hpp" path="C:\Users\zisk\Desktop\2\my_ip_hls\my_ip_hls.hpp"/>
+    <originFiles name="ps2ip_fifo.cpp" path="C:\Users\zisk\Desktop\2\my_ip_hls\ps2ip_fifo.cpp"/>
+    <originFiles name="ziskasrules.cpp" path="C:\Users\zisk\Desktop\2\my_ip_hls\ziskasrules.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="my_ip_hls_tb.cpp" path="C:\Users\zisk\Desktop\2\my_ip_hls\my_ip_hls_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

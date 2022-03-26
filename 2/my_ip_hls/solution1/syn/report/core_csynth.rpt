@@ -1,0 +1,205 @@
+
+
+================================================================
+== Vivado HLS Report for 'core'
+================================================================
+* Date:           Sun Apr 21 19:20:44 2019
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        my_ip_hls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z045ffg900-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      6.95|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|     211|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |        -|      -|       -|       -|
+|Memory           |        -|      -|       -|       -|
+|Multiplexer      |        -|      -|       -|     186|
+|Register         |        -|      -|     142|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        0|      0|     142|     397|
++-----------------+---------+-------+--------+--------+
+|Available        |     1090|    900|  437200|  218600|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |tmp_1_i_i_i_fu_232_p2             |     +    |      0|  0|  39|          32|           1|
+    |tmp_7_i_i_i_fu_244_p2             |     +    |      0|  0|  39|          32|           1|
+    |tmp_9_i_i_i_fu_238_p2             |     +    |      0|  0|  39|          32|           1|
+    |ap_predicate_op45_write_state2    |    and   |      0|  0|   8|           1|           1|
+    |ip2psFifo_V_data_V1_status        |    and   |      0|  0|   8|           1|           1|
+    |ps2ipFifo_V_data_V0_status        |    and   |      0|  0|   8|           1|           1|
+    |tmp_6_i_i_i_fu_214_p2             |   icmp   |      0|  0|  18|          32|          32|
+    |tmp_8_i_i_i_fu_220_p2             |   icmp   |      0|  0|  18|          32|          32|
+    |tmp_i_i_i_fu_226_p2               |   icmp   |      0|  0|  18|          32|          32|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   8|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1  |    or    |      0|  0|   8|           1|           1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0| 211|         197|         104|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------------------+----+-----------+-----+-----------+
+    |                       Name                       | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_iter1_fsm                                   |  15|          3|    2|          6|
+    |ap_done                                           |   9|          2|    1|          2|
+    |ap_phi_reg_pp0_iter1_rule1cnt_V_buf_lc_1_reg_186  |  15|          3|   32|         96|
+    |ap_phi_reg_pp0_iter1_rule2cnt_V_buf_lc_2_reg_170  |  15|          3|   32|         96|
+    |ap_phi_reg_pp0_iter1_rule3cnt_V_buf_lc_3_reg_154  |  15|          3|   32|         96|
+    |ip2psFifo_V_data_V_blk_n                          |   9|          2|    1|          2|
+    |ip2psFifo_V_last_V_blk_n                          |   9|          2|    1|          2|
+    |ip2psFifo_V_strb_V_blk_n                          |   9|          2|    1|          2|
+    |ps2ipFifo_V_data_V_blk_n                          |   9|          2|    1|          2|
+    |ps2ipFifo_V_last_V_blk_n                          |   9|          2|    1|          2|
+    |ps2ipFifo_V_strb_V_blk_n                          |   9|          2|    1|          2|
+    |real_start                                        |   9|          2|    1|          2|
+    |rule1cnt_V_buf_blk_n                              |   9|          2|    1|          2|
+    |rule1cnt_V_buf_out_blk_n                          |   9|          2|    1|          2|
+    |rule2cnt_V_buf_blk_n                              |   9|          2|    1|          2|
+    |rule2cnt_V_buf_out_blk_n                          |   9|          2|    1|          2|
+    |rule3cnt_V_buf_blk_n                              |   9|          2|    1|          2|
+    |rule3cnt_V_buf_out_blk_n                          |   9|          2|    1|          2|
+    +--------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                             | 186|         40|  112|        322|
+    +--------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------------------+----+----+-----+-----------+
+    |                       Name                       | FF | LUT| Bits| Const Bits|
+    +--------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_iter0_fsm                                   |   1|   0|    1|          0|
+    |ap_CS_iter1_fsm                                   |   2|   0|    2|          0|
+    |ap_done_reg                                       |   1|   0|    1|          0|
+    |ap_phi_reg_pp0_iter1_rule1cnt_V_buf_lc_1_reg_186  |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_rule2cnt_V_buf_lc_2_reg_170  |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_rule3cnt_V_buf_lc_3_reg_154  |  32|   0|   32|          0|
+    |start_once_reg                                    |   1|   0|    1|          0|
+    |tmp_6_i_i_i_reg_293                               |   1|   0|    1|          0|
+    |tmp_8_i_i_i_reg_297                               |   1|   0|    1|          0|
+    |tmp_data_V_reg_278                                |  32|   0|   32|          0|
+    |tmp_i_i_i_reg_301                                 |   1|   0|    1|          0|
+    |tmp_last_V_reg_288                                |   1|   0|    1|          0|
+    |tmp_reg_274                                       |   1|   0|    1|          0|
+    |tmp_strb_V_reg_283                                |   4|   0|    4|          0|
+    +--------------------------------------------------+----+----+-----+-----------+
+    |Total                                             | 142|   0|  142|          0|
+    +--------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+--------------+--------------------+--------------+
+|          RTL Ports         | Dir | Bits|   Protocol   |    Source Object   |    C Type    |
++----------------------------+-----+-----+--------------+--------------------+--------------+
+|ap_clk                      |  in |    1| ap_ctrl_none |        core        | return value |
+|ap_rst                      |  in |    1| ap_ctrl_none |        core        | return value |
+|ap_start                    |  in |    1| ap_ctrl_none |        core        | return value |
+|start_full_n                |  in |    1| ap_ctrl_none |        core        | return value |
+|ap_done                     | out |    1| ap_ctrl_none |        core        | return value |
+|ap_continue                 |  in |    1| ap_ctrl_none |        core        | return value |
+|ap_idle                     | out |    1| ap_ctrl_none |        core        | return value |
+|ap_ready                    | out |    1| ap_ctrl_none |        core        | return value |
+|start_out                   | out |    1| ap_ctrl_none |        core        | return value |
+|start_write                 | out |    1| ap_ctrl_none |        core        | return value |
+|rule1cnt_V_buf_dout         |  in |   32|    ap_fifo   |   rule1cnt_V_buf   |    pointer   |
+|rule1cnt_V_buf_empty_n      |  in |    1|    ap_fifo   |   rule1cnt_V_buf   |    pointer   |
+|rule1cnt_V_buf_read         | out |    1|    ap_fifo   |   rule1cnt_V_buf   |    pointer   |
+|rule2cnt_V_buf_dout         |  in |   32|    ap_fifo   |   rule2cnt_V_buf   |    pointer   |
+|rule2cnt_V_buf_empty_n      |  in |    1|    ap_fifo   |   rule2cnt_V_buf   |    pointer   |
+|rule2cnt_V_buf_read         | out |    1|    ap_fifo   |   rule2cnt_V_buf   |    pointer   |
+|rule3cnt_V_buf_dout         |  in |   32|    ap_fifo   |   rule3cnt_V_buf   |    pointer   |
+|rule3cnt_V_buf_empty_n      |  in |    1|    ap_fifo   |   rule3cnt_V_buf   |    pointer   |
+|rule3cnt_V_buf_read         | out |    1|    ap_fifo   |   rule3cnt_V_buf   |    pointer   |
+|rule1cnt_V_buf_out_din      | out |   32|    ap_fifo   | rule1cnt_V_buf_out |    pointer   |
+|rule1cnt_V_buf_out_full_n   |  in |    1|    ap_fifo   | rule1cnt_V_buf_out |    pointer   |
+|rule1cnt_V_buf_out_write    | out |    1|    ap_fifo   | rule1cnt_V_buf_out |    pointer   |
+|rule2cnt_V_buf_out_din      | out |   32|    ap_fifo   | rule2cnt_V_buf_out |    pointer   |
+|rule2cnt_V_buf_out_full_n   |  in |    1|    ap_fifo   | rule2cnt_V_buf_out |    pointer   |
+|rule2cnt_V_buf_out_write    | out |    1|    ap_fifo   | rule2cnt_V_buf_out |    pointer   |
+|rule3cnt_V_buf_out_din      | out |   32|    ap_fifo   | rule3cnt_V_buf_out |    pointer   |
+|rule3cnt_V_buf_out_full_n   |  in |    1|    ap_fifo   | rule3cnt_V_buf_out |    pointer   |
+|rule3cnt_V_buf_out_write    | out |    1|    ap_fifo   | rule3cnt_V_buf_out |    pointer   |
+|p_read                      |  in |   32|    ap_none   |       p_read       |    scalar    |
+|p_read1                     |  in |   32|    ap_none   |       p_read1      |    scalar    |
+|p_read2                     |  in |   32|    ap_none   |       p_read2      |    scalar    |
+|ps2ipFifo_V_data_V_dout     |  in |   32|    ap_fifo   | ps2ipFifo_V_data_V |    pointer   |
+|ps2ipFifo_V_data_V_empty_n  |  in |    1|    ap_fifo   | ps2ipFifo_V_data_V |    pointer   |
+|ps2ipFifo_V_data_V_read     | out |    1|    ap_fifo   | ps2ipFifo_V_data_V |    pointer   |
+|ps2ipFifo_V_strb_V_dout     |  in |    4|    ap_fifo   | ps2ipFifo_V_strb_V |    pointer   |
+|ps2ipFifo_V_strb_V_empty_n  |  in |    1|    ap_fifo   | ps2ipFifo_V_strb_V |    pointer   |
+|ps2ipFifo_V_strb_V_read     | out |    1|    ap_fifo   | ps2ipFifo_V_strb_V |    pointer   |
+|ps2ipFifo_V_last_V_dout     |  in |    1|    ap_fifo   | ps2ipFifo_V_last_V |    pointer   |
+|ps2ipFifo_V_last_V_empty_n  |  in |    1|    ap_fifo   | ps2ipFifo_V_last_V |    pointer   |
+|ps2ipFifo_V_last_V_read     | out |    1|    ap_fifo   | ps2ipFifo_V_last_V |    pointer   |
+|ip2psFifo_V_data_V_din      | out |   32|    ap_fifo   | ip2psFifo_V_data_V |    pointer   |
+|ip2psFifo_V_data_V_full_n   |  in |    1|    ap_fifo   | ip2psFifo_V_data_V |    pointer   |
+|ip2psFifo_V_data_V_write    | out |    1|    ap_fifo   | ip2psFifo_V_data_V |    pointer   |
+|ip2psFifo_V_strb_V_din      | out |    4|    ap_fifo   | ip2psFifo_V_strb_V |    pointer   |
+|ip2psFifo_V_strb_V_full_n   |  in |    1|    ap_fifo   | ip2psFifo_V_strb_V |    pointer   |
+|ip2psFifo_V_strb_V_write    | out |    1|    ap_fifo   | ip2psFifo_V_strb_V |    pointer   |
+|ip2psFifo_V_last_V_din      | out |    1|    ap_fifo   | ip2psFifo_V_last_V |    pointer   |
+|ip2psFifo_V_last_V_full_n   |  in |    1|    ap_fifo   | ip2psFifo_V_last_V |    pointer   |
+|ip2psFifo_V_last_V_write    | out |    1|    ap_fifo   | ip2psFifo_V_last_V |    pointer   |
++----------------------------+-----+-----+--------------+--------------------+--------------+
+

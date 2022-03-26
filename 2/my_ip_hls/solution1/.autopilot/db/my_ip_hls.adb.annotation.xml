@@ -1,0 +1,43 @@
+<annotationInfo>
+<annotationInfo>
+</annotationInfo>
+<annotationInfo>
+</annotationInfo>
+<annotationInfo>
+</annotationInfo>
+<annotationInfo>
+</annotationInfo>
+<annotationInfo>
+</annotationInfo>
+<annotationInfo>
+</annotationInfo>
+<annotationInfo>
+</annotationInfo>
+<annotationInfo>
+<item  id="46" filename="my_ip_hls/core.cpp" linenumber="26" name="tmp_6_i_i_i" contextFuncName="core" moduleName="core" rtlName="tmp_6_i_i_i_fu_214_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="18" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+<item  id="49" filename="my_ip_hls/core.cpp" linenumber="29" name="tmp_8_i_i_i" contextFuncName="core" moduleName="core" rtlName="tmp_8_i_i_i_fu_220_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="18" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+<item  id="52" filename="my_ip_hls/core.cpp" linenumber="32" name="tmp_i_i_i" contextFuncName="core" moduleName="core" rtlName="tmp_i_i_i_fu_226_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="18" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+<item  id="58" filename="my_ip_hls/core.cpp" linenumber="33" name="tmp_1_i_i_i" contextFuncName="core" moduleName="core" rtlName="tmp_1_i_i_i_fu_232_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+<item  id="61" filename="my_ip_hls/core.cpp" linenumber="30" name="tmp_9_i_i_i" contextFuncName="core" moduleName="core" rtlName="tmp_9_i_i_i_fu_238_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+<item  id="64" filename="my_ip_hls/core.cpp" linenumber="27" name="tmp_7_i_i_i" contextFuncName="core" moduleName="core" rtlName="tmp_7_i_i_i_fu_244_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+</annotationInfo>
+<annotationInfo>
+<item  id="6" filename="my_ip_hls/ziskasrules.cpp" linenumber="9" name="exodos2_V_assign_i_i" contextFuncName="okanonas2" moduleName="okanonas284" rtlName="exodos2_V_assign_i_i_fu_28_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+</annotationInfo>
+<annotationInfo>
+<item  id="6" filename="my_ip_hls/ziskasrules.cpp" linenumber="9" name="exodos2_V_assign_i_i" contextFuncName="okanonas2" moduleName="okanonas285" rtlName="exodos2_V_assign_i_i_fu_28_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+</annotationInfo>
+<annotationInfo>
+<item  id="6" filename="my_ip_hls/ziskasrules.cpp" linenumber="9" name="exodos2_V_assign_i_i" contextFuncName="okanonas2" moduleName="okanonas2" rtlName="exodos2_V_assign_i_i_fu_28_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+</annotationInfo>
+<annotationInfo>
+</annotationInfo>
+<annotationInfo>
+<item  id="114" filename="my_ip_hls/my_ip_hls.cpp" linenumber="35" name="regrule1_V_channel" contextFuncName="my_ip_hls" moduleName="my_ip_hls" rtlName="regrule1_V_channel_U" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+<item  id="115" filename="my_ip_hls/my_ip_hls.cpp" linenumber="36" name="regrule2_V_channel" contextFuncName="my_ip_hls" moduleName="my_ip_hls" rtlName="regrule2_V_channel_U" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+<item  id="116" filename="my_ip_hls/my_ip_hls.cpp" linenumber="37" name="regrule3_V_channel" contextFuncName="my_ip_hls" moduleName="my_ip_hls" rtlName="regrule3_V_channel_U" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+<item  id="117" filename="my_ip_hls/my_ip_hls.cpp" linenumber="40" name="" contextFuncName="my_ip_hls" moduleName="my_ip_hls" rtlName="ps2ip_fifo_U0" latency="1" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+<item  id="124" filename="my_ip_hls/my_ip_hls.cpp" linenumber="35" name="" contextFuncName="my_ip_hls" moduleName="my_ip_hls" rtlName="core_U0" latency="1" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+<item  id="128" filename="my_ip_hls/my_ip_hls.cpp" linenumber="51" name="" contextFuncName="my_ip_hls" moduleName="my_ip_hls" rtlName="ip2ps_fifo_U0" latency="2" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="C:\Users\zisk\Desktop\2"></item>
+</annotationInfo>
+</annotationInfo>
