@@ -10,6 +10,12 @@
 ## General Info
 
 ## rSoC structure
+
+![rsoc](https://user-images.githubusercontent.com/22920222/160246516-5ddf64eb-8a30-40c8-bcf0-f8081e58ba70.png)
+
+<br><br>
+
+
 Modules:
 * Processing System (PS): The processor that runs the application and can communicate 
 with material in the PL via an I/O port.
