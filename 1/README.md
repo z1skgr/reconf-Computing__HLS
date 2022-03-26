@@ -120,11 +120,36 @@ if(M_Axis_tvalid==1 and S_AXIS_tready==1) then
 ## Simulations
 Simulations have been used that separately depict the functionality of the `myip_module`. Simulation are divided into two operating scenarios.
 
-### Read/Write without delay
+### Read/Write without delay (scenario#1)
 FIFO in reset state
 __Write__
-* Assign values for registration by the Slave interface (0, FIFO-Length-1)
+* Assign data for registration by the Slave interface (0, FIFO-Length-1)
     * s_tready = 1
     * s_tvalid = 1
+* `signal store` transfers data from register to FIFO
+    * Data stream from zero to FIFO-Length-1
+* In the last entry, `writes_done` is activated 
+    * the registration is completed.
 
-### Read/Write with intervals
+__Read__
+True signals: M_valid, M_tready
+*  Master forwards address to slave
+*  Slave takes data from FIFO[address] and forwards to master [^2]
+*  Terminations is when read pointer is on FIFO-Length
+    * tx_done = 1
+
+### Read/Write with intervals (scenario#2)
+FIFO in reset state
+Steps:
+* The first assignment to be recorded by the Slave interface is made for 28 cycles.
+* 5-cycle pause
+* The second assignment to be recorded by the Slave interface is made for 36 cycles.
+* 10-cycle pause
+* The first read procedure between the two components for 28 cycles.
+* 5-cycle pause
+* The second read procedure between the two components for 36 cycles.
+
+
+
+[^1]: Reading time has 1 cycle delay
+[^2]: Address is the read pointer value
