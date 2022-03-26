@@ -54,8 +54,15 @@ functions needed to process the data.
 
 ![Untitled Diagram](https://user-images.githubusercontent.com/22920222/160257816-49e140fd-a2bc-4297-8c06-d5a944153a96.png)
 
+* Check S_axis to have data for read.
+    * Register rules blocks values and increase counter.
+* Data export to M_heap
 
-
+### Rules
+There are three functions:
+* `okanonas(uint32 rule,uint32 &exodos)`:Function of assigning input value to an output variable to store the value of the rule in the register.
+* `okanonas2(uint32 rule,uint32 &exodos2)`: Function of adding input value to the output variable to update the counter of the rules.
+* `print(uint32 num1, uint32 num2, uint32 num3)`:Result printing function. The counters of the rules are printed after each data that exists in the stream
 
 
 ## Simulations
@@ -73,3 +80,4 @@ Simulations have been used that separately depict the functionality of the `myip
 
 [^1]: Reading time has 1 cycle delay
 [^2]: Address is the read pointer value
+[^3]: Register is built from directives
