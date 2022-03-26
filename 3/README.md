@@ -19,7 +19,7 @@ Necessary steps to obtain the correct, explanatory study in the datapath and the
 
 
 ## System structure
-Join the module with the rest of the system
+Link the module with the rest of the system
 
 ![sss](https://user-images.githubusercontent.com/22920222/160258889-758e2f17-1ee2-4759-b5f4-eebea1a9c105.png)
 
@@ -34,11 +34,6 @@ Block design is followed by component modifications, links, and the introduction
 
 <br><br>
 
-
-
-
-
- 
 
 
 
