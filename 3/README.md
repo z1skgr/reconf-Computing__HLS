@@ -51,8 +51,8 @@ Block design is followed by component modifications, links, and the introduction
 ## Simulations
 Simulations have been used that separately depict the functionality of the `myip_module`. Simulation are divided into two operating scenarios.
 
-* [__Scenario#1__](photo\scenario1) (Verify the basic data flow function, identify rules and update counters)
-* [__Scenario#2__](photo\scenario2) (Responses to multiple data rejections from each rule)
+* [__Scenario#1__](photo/scenario1) (Verify the basic data flow function, identify rules and update counters)
+* [__Scenario#2__](photo/scenario2) (Responses to multiple data rejections from each rule)
 
 
 ## IP Export
