@@ -17,26 +17,26 @@
 
 
 Modules:
-* Processing System (PS): The processor that runs the application and can communicate 
+* __Processing System (PS)__: The processor that runs the application and can communicate 
 with material in the PL via an I/O port.
-* Interconnect (I/C): Interconnection that allows communication between modules
-* Memory ctlr: The memory controller that allows access to data from PS and 
+* __Interconnect (I/C)__: Interconnection that allows communication between modules
+* __Memory ctlr__: The memory controller that allows access to data from PS and 
 any module in PL.
-* Memory: The memory that data is stored either for processing or as results 
+* __Memory__: The memory that data is stored either for processing or as results 
 after processing
-* My IPs: All the logic we've put in and can access memory through DMAe.
+* __My IPs__: All the logic we've put in and can access memory through DMAe.
 Probably logic not only communicates with DMAe, but also has a connection to PS, 
 in order for the latter to be able to pass parameters or see the state of the 
 Logic
-* DMA engine (DMAe): The module that allows access to memory without being affected 
+* __DMA engine (DMAe)__: The module that allows access to memory without being affected 
 the operation of PS. More specifically, DMAe has the following signals:
-   * Configuration: Interface to enable the PS to program or view the status 
+   * *Configuration*: Interface to enable the PS to program or view the status 
 of DMAe
-   * Data_mem: Memory-mapped interface to exchange the DMAe data with the 
+   * *Data_mem*: Memory-mapped interface to exchange the DMAe data with the 
 memory.
-   * Data_M2IP_S: Streaming interface for transferring data from DMAe to 
+   * *Data_M2IP_S*: Streaming interface for transferring data from DMAe to 
 our logic.
-   * Data_IP2M_S: Streaming interface to transfer data from our logic to 
+   * *Data_IP2M_S*: Streaming interface to transfer data from our logic to 
 the DMAe.
 
 
