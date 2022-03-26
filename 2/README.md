@@ -39,7 +39,9 @@ it was 10, 20, 30, 40, 50, 60, 70, 50, the exit will be 20, 40, 60, 70.
 outputs, the interfaces we want (eg AXI Lite, AXI Stream), as well as we call the individual 
 functions needed to process the data.
 * `core.cpp`: The module in which the data will be controlled in relation to the rules that we have set.
-* `ps2ip_fifo.cpp`: The queue for input data/
+* `ps2ip_fifo.cpp`: The queue for input data
+* `ip2ps _fifo.cpp`: The queue for the output data.
+* `my_ip_hls_tb.cpp`: The file that describes the testbench.
 
 
 ## Modifications
@@ -47,6 +49,9 @@ functions needed to process the data.
 2. Insert a task that increases the counter for each rule in case the data and the rule coincide.
 3. Update the myip module's directives for the placement of the desired number of registers.
 4. Print the rules counters in each data check.
+
+
+
 
 ## Simulations
 Simulations have been used that separately depict the functionality of the `myip_module`. Simulation are divided into two operating scenarios.
