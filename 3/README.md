@@ -1,4 +1,4 @@
-# 64-FIFO Implementantion 32 bits words
+# 64-FIFO and Data flow-system in a integrated design
 > Implement FIFO with procedures of writing/reading elements between master-slave interfaces of AXI4-protocol
 
 ## Table of Contents
