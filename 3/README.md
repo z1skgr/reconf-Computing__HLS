@@ -4,6 +4,7 @@
 ## Table of Contents
 * [General Info](#general-info)
 * [System structure](#rsoc-structure)
+* [Block diagram](#block-diagram)
 * [Modifications](#modifications)
 * [Simulations](#simulations)
 * [IP Export](#ip-export)
@@ -18,10 +19,13 @@ Necessary steps to obtain the correct, explanatory study in the datapath and the
 
 
 ## System structure
+Join the module with the rest of the systema
+![sss](https://user-images.githubusercontent.com/22920222/160258889-758e2f17-1ee2-4759-b5f4-eebea1a9c105.png)
 
 
 
-Tthe diagram block design is followed by component modifications, links, and the introduction of the new implementation:
+## Block Diagram
+Block design is followed by component modifications, links, and the introduction of the new implementation:
 
 ![bb](https://user-images.githubusercontent.com/22920222/160258831-65c68df3-a0e4-4770-850a-d94258c5bb0b.png)
 
