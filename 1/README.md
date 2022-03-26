@@ -6,8 +6,13 @@
 * [rSoC structure](#rsoc-structure)
 * [Project Environment](#project-environment)
 * [Edit Logic](#edit-logic)
+* [Modifications](#modifications)
 
 ## General Info
+The final construction requires
+* Construction of 64-fifo (32 bits size word)
+* Implementation of procedures for recording and reading fifo elements between masters
+slave Interfaces of ACHI4-protocol
 
 ## rSoC structure
 
@@ -81,7 +86,7 @@ In our logic, we have set the variables in the table below:
 1. Open the project with 2017.4
 2. Flow navigator -> IP catalog -> User repository -> AXI peripheral -> my ip -> Edit in IP packager [^1]
 3. A new instance of Vivado will open, where you will make the changes of the VHDL code.
-4. In the new project that opens -> Sources -> Design Sources ? myip_v1_1.vhd click to open the top level module code. By expanding myip_v1_1.vhd you will see the others two components that implement the AXI Stream master and slave interfaces.
+4. In the new project that opens -> Sources -> Design Sources -> myip_v1_1.vhd click to open the top level module code. By expanding myip_v1_1.vhd you will see the others two components that implement the AXI Stream master and slave interfaces.
 5. When you make changes to the code, then save. Then select Project Manager -> Package IP. A new tab appears on the right "Package IP - myip" along with Packaging steps.
 6. In the identification, change the version, so that you can be sure that after the simulation
 you use the updated IP.  
@@ -104,4 +109,6 @@ if(S_Axis_tvalid==1 and S_AXIS_tready==1) then
 if(M_Axis_tvalid==1 and S_AXIS_tready==1) then
    M_Axis_tdata <= FIFO[0]; where i 1<sup>st</sup> empty space in FIFO
 ```
+
+## Modifications
 
