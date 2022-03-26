@@ -138,7 +138,7 @@ True signals: M_valid, M_tready
 *  Terminations is when read pointer is on FIFO-Length
     * tx_done = 1
 
-### Read/Write with intervals (scenario#2)
+### Read/Write with intervals ([scenario#2](https://github.com/z1skgr/reconfigurable-Computing/issues/7#issue-1182012159))
 FIFO in reset state
 Steps:
 * The first assignment to be recorded by the Slave interface is made for 28 cycles.
