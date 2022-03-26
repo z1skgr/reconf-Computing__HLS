@@ -4,7 +4,6 @@
 ## Table of Contents
 * [General Info](#general-info)
 * [Flow data system structure](#flow-data-system-structure)
-* [Project Environment](#project-environment)
 * [Edit Logic](#edit-logic)
 * [Modifications](#modifications)
 * [Simulations](#simulations)
@@ -16,126 +15,50 @@ The final construction requires
 * Update the rest of the system details as well as the required communication between them.
 
 ## Flow data system structure
+System implemented of:
+* Registers
+* 2 heaps
+* Core module
 
+![mil2](https://user-images.githubusercontent.com/22920222/160256226-d9d8258f-a25d-44a6-8aff-89cda4cbebbb.png)
 
+Modules:
+*  6 registers can be written/read by the processor through an AXI Lite interface. 
+   * 3 have the value of each rule 
+   * 3 counters for how many times data was discarded because it was identified with some rule. 
+*  The two heaps are used to temporarily store the data streams at input and output by following the AXI Stream protocol
+*  The core module reads data from the input queue, checks if any of them is identified with any of the existing rules, and either renews the corresponding meter, or forwards the data to the output. For the example above where the input 
+it was 10, 20, 30, 40, 50, 60, 70, 50, the exit will be 20, 40, 60, 70.
 
-## Project Environment
-Interconnection of PS with DMAe using AXI4 and AXI4 interface
-
-![axi4_1](https://user-images.githubusercontent.com/22920222/160241684-42f82bc7-4aba-4052-bb47-1b73ac955f36.png)
-
-<br><br>
-
-Here, it's the block design at Vivado. Based on the numbers shown in the figure:
-
-
-![axi4_2](https://user-images.githubusercontent.com/22920222/160241694-dd46b84e-b56e-4ce6-86e9-58b6a39ddd64.png)
-<br>
-
-1. The PS running the application, and will configure the DMAe
-2. The AXI4 interconnect that allows communication between the PS and our logic, one
-AXI4 memory controller, and DMAe. 
-3. The 1st memory controller that allows access to memory from the PS
-4. The 2nd memory controller that allows access to memory from the DMAe
-5. The DMAe used to transfer data between logic <-> DMAe.
-6. The AXI4 interconnect that allows DMAe to access memory via memory
-controller.
-7. The memory in which data is stored for processing and results.
-8. Our logic.
-
-In our logic, we have set the variables in the table below:
-
-| Type  | Name |  Size (bits) | Type | Description|
-| ------------- | ------------- | --------- | ---------| ---------|
-| Slave AXI4 Stream Interface  | S_Axis_tvalid  | 1 | Input | Declare data existance for save in FIFO|
-| -//-  | S_Axis_tdata  | 32 | Input | Data for save in FIFO |
-| -//-  | S_Axis_tread | 1 | Output | FIFO ready for new entry |
-| Master AXI4 Stream Interface  | M_Axis_tvalid | 1 | Output | Declare save data in FIFO from old entry |
-| -//-  | M_Axis_tdata | 32 | Output | Data saved in FIFO from old entry |
-| -//-  | M_Axis_tready | 1 | Input | DMAe is ready for new entry |
 
 
 
 ## Edit logic
-1. Open the project with 2017.4
-2. Flow navigator -> IP catalog -> User repository -> AXI peripheral -> my ip -> Edit in IP packager [^1]
-3. A new instance of Vivado will open, where you will make the changes of the VHDL code.
-4. In the new project that opens -> Sources -> Design Sources -> myip_v1_1.vhd click to open the top level module code. By expanding myip_v1_1.vhd you will see the others two components that implement the AXI Stream master and slave interfaces.
-5. When you make changes to the code, then save. Then select Project Manager -> Package IP. A new tab appears on the right "Package IP - myip" along with Packaging steps.
-6. In the identification, change the version, so that you can be sure that after the simulation
-you use the updated IP.  
-7. In the Review and Package step, click Re-Package IP. In the original project that is for the whole
-system, an IP catalog message will be displayed is out-of-date:
-8. Press Refresh IP Catalog and then at the bottom  Upgrade selected. In the window 
-"Generate Output Products" press Skip.
-9. If you already have the simulation open, you should start it from scratch.
- 
- 
-<br><br>
-* FIFO writing
-```
-if(S_Axis_tvalid==1 and S_AXIS_tready==1) then
-   FIFO[i] <= S_AXIS_tdata; 
-```
-where i 1<sup>st</sup> empty space in FIFO
-
-* FIFO reading
-```
-if(M_Axis_tvalid==1 and S_AXIS_tready==1) then
-   M_Axis_tdata <= FIFO[0]; 
-```
+* `my_ip_hls.hpp` : header file of the project, in which we include libraries, as well as functions' declarations.
+* `my_ip_hls.cpp`: it is the top-level file of the project, in which we declare the entrances 
+outputs, the interfaces we want (eg AXI Lite, AXI Stream), as well as we call the individual 
+functions needed to process the data.
+* `core.cpp`: The module in which the data will be controlled in relation to the rules that we have set.
+* `ps2ip_fifo.cpp`: The queue for input data/
 
 
 ## Modifications
-1. Change of counter/pointers and positions reserved for the construction of FIFO
-2. Modification of [FSM](https://github.com/z1skgr/reconfigurable-Computing/issues/3#issue-1181864959) machine in slave module for registration.
-3. Master-slave communication for [reading](https://github.com/z1skgr/reconfigurable-Computing/issues/4#issue-1181866707) with address signal.
-4. [Insertion register](https://github.com/z1skgr/reconfigurable-Computing/issues/5#issue-1181867633) in the slave component.
+1. Introduction of a task concerning the construction of a function for assigning values to each register.
+2. Insert a task that increases the counter for each rule in case the data and the rule coincide.
+3. Update the myip module's directives for the placement of the desired number of registers.
+4. Print the rules counters in each data check.
 
 ## Simulations
 Simulations have been used that separately depict the functionality of the `myip_module`. Simulation are divided into two operating scenarios.
 
-### Read/Write without delay ([scenario#1](https://github.com/z1skgr/reconfigurable-Computing/issues/6#issue-1182011908))
-FIFO in reset state
-__Write__
-* Assign data for registration by the Slave interface (0, FIFO-Length-1)
-    * s_tready = 1
-    * s_tvalid = 1
-* `signal store` transfers data from register to FIFO
-    * Data stream from zero to FIFO-Length-1
-* In the last entry, `writes_done` is activated 
-    * the registration is completed.
-
-__Read__
-True signals: M_valid, M_tready
-*  Master forwards address to slave
-*  Slave takes data from FIFO[address] and forwards to master [^2]
-*  Terminations is when read pointer is on FIFO-Length
-    * tx_done = 1
-
-### Read/Write with intervals ([scenario#2](https://github.com/z1skgr/reconfigurable-Computing/issues/7#issue-1182012159))
-FIFO in reset state
-Steps:
-* The first assignment to be recorded by the Slave interface is made for 28 cycles.
-* 5-cycle pause
-* The second assignment to be recorded by the Slave interface is made for 36 cycles.
-* 10-cycle pause
-* The first read procedure between the two components for 28 cycles.
-* 5-cycle pause
-* The second read procedure between the two components for 36 cycles.
-
+### Scenario#1 (Stream of data with values in space [0~100])
+### Scenario#2 (Stream of data with blocking data identical to rules)
 
 ### Simulation Steps
-1. Open the project with 2017.4
-2. IP INTEGRATOR ->  Open Block Design
-3. SIMULATION ->  Run Simulation ->  Run Behavioral Simulation
-4. When the simulation opens, close the Untitled waveform (if any) and open it 
-"tb_behav.wcfg" as follows: File -> Open Waveform Configuration -> tb_behav.wcfg
-5. To the left of the waveform there are the Obejcts and next to them 2 tabs, Scope and Resources. 
-Select the Resources Simulation Sources sim_1 zynq_tb.v to open the testbench.
-6. Press the "Run all" button to run the simulation and once it is finished you can 
-continue the simulation by pressing the "Run for 1000 ns" button to continue the 
-simulation for 1000 nsec at a time. 
+1. Open reference project for Vivado HLS
+2. Open the `my_ip_hls_tb.cpp` from project
+3. Find __Run C simulation__.
+
 
 
 [^1]: Reading time has 1 cycle delay
