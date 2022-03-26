@@ -151,6 +151,18 @@ Steps:
 * The second read procedure between the two components for 36 cycles.
 
 
+### Simulation Steps
+1. Open the project with 2017.4
+2. IP INTEGRATOR ->  Open Block Design
+3. SIMULATION ->  Run Simulation ->  Run Behavioral Simulation
+4. When the simulation opens, close the Untitled waveform (if any) and open it 
+"tb_behav.wcfg" as follows: File -> Open Waveform Configuration -> tb_behav.wcfg
+5. To the left of the waveform there are the Obejcts and next to them 2 tabs, Scope and Resources. 
+Select the Resources Simulation Sources sim_1 zynq_tb.v to open the testbench.
+6. Press the "Run all" button to run the simulation and once it is finished you can 
+continue the simulation by pressing the "Run for 1000 ns" button to continue the 
+simulation for 1000 nsec at a time. 
+
 
 [^1]: Reading time has 1 cycle delay
 [^2]: Address is the read pointer value
