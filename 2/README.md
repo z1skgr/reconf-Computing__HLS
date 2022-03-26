@@ -68,8 +68,8 @@ There are three functions:
 ## Simulations
 Simulations have been used that separately depict the functionality of the `myip_module`. Simulation are divided into two operating scenarios.
 
-* __Scenario#1__ (Stream of data with values in space [0~100])
-* __Scenario#2__ (Stream of data with blocking data identical to rules)
+* [__Scenario#1__](1/photo/scenario1) (Stream of data with values in space [0~100])
+* [__Scenario#2__](2/photo/scenario2)(Stream of data with blocking data identical to rules)
 
 ### Simulation Steps
 1. Open reference project for Vivado HLS
