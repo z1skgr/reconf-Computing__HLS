@@ -123,6 +123,9 @@ Simulations have been used that separately depict the functionality of the `myip
 
 ### Read/Write without delay ([scenario#1](https://github.com/z1skgr/reconfigurable-Computing/issues/6#issue-1182011908))
 FIFO in reset state
+
+<br>
+
 __Write__
 * Assign data for registration by the Slave interface (0, FIFO-Length-1)
     * s_tready = 1
@@ -131,6 +134,8 @@ __Write__
     * Data stream from zero to FIFO-Length-1
 * In the last entry, `writes_done` is activated 
     * the registration is completed.
+
+<br>
 
 __Read__
 True signals: M_valid, M_tready
