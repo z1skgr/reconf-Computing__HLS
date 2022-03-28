@@ -1,5 +1,5 @@
 # 64-FIFO and Data flow-system in a integrated design
->  Union 64 FIFO and Data stream system
+>  Combine 64 FIFO and Data stream system
 
 ## Table of Contents
 * [General Info](#general-info)
