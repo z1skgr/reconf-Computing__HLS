@@ -54,9 +54,9 @@ functions needed to process the data.
 
 ![Untitled Diagram](https://user-images.githubusercontent.com/22920222/160257816-49e140fd-a2bc-4297-8c06-d5a944153a96.png)
 
-* Check S_axis to have data for read.
+* Check `S_axis` to have data for read.
     * Register rules blocks values and increase counter.
-* Data export to M_heap
+* Data export to `M_heap`. 
 
 ### Rules
 There are three functions:
