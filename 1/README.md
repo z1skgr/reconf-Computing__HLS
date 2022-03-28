@@ -128,8 +128,8 @@ FIFO in reset state
 
 __Write__
 * Assign data for registration by the Slave interface (0, FIFO-Length-1)
-    * s_tready = 1
-    * s_tvalid = 1
+    * `s_tready = 1`
+    * `s_tvalid = 1`
 * `signal store` transfers data from register to FIFO
     * Data stream from zero to FIFO-Length-1
 * In the last entry, `writes_done` is activated 
@@ -138,11 +138,11 @@ __Write__
 <br>
 
 __Read__
-True signals: M_valid, M_tready
+True signals: `M_valid, M_tready`
 *  Master forwards address to slave
 *  Slave takes data from FIFO[address] and forwards to master [^2]
 *  Terminations is when read pointer is on FIFO-Length
-    * tx_done = 1
+    * 'tx_done = 1' 
 
 ### Read/Write with intervals ([scenario#2](https://github.com/z1skgr/reconfigurable-Computing/issues/7#issue-1182012159))
 FIFO in reset state
