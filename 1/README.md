@@ -13,7 +13,7 @@
 The final construction requires
 * Construction of 64-fifo (32 bits size word)
 * Implementation of procedures for recording and reading fifo elements between masters
-slave Interfaces of ACHI4-protocol
+slave Interfaces of AXI4-protocol
 
 ## rSoC structure
 
