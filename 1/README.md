@@ -1,5 +1,5 @@
 # 64-FIFO Implementantion 32 bits words
-> Implement FIFO with procedures of writing/reading elements between master-slave interfaces of AXI4-protocol
+> Implement FIFO with procedures of writing/reading elements between master-slave interfaces of AXI4-protocol (My IPs)
 
 ## Table of Contents
 * [General Info](#general-info)
@@ -10,13 +10,15 @@
 * [Simulations](#simulations)
 
 ## General Info
-The final construction requires
+The final construction (My IPs modifications) requires
 * Construction of 64-fifo (32 bits size word)
 * Implementation of procedures for recording and reading fifo elements between masters
 slave Interfaces of AXI4-protocol
 
-## rSoC structure
 
+
+## rSoC structure
+The whole project is structured based on the diagram below:
 ![rsoc](https://user-images.githubusercontent.com/22920222/160246516-5ddf64eb-8a30-40c8-bcf0-f8081e58ba70.png)
 
 <br><br>
